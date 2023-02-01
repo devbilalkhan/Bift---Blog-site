@@ -31,4 +31,4 @@ $ npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch
 ```
 
 
-Load environment variables from `.env` file. See the same `.env-sample` file.
+Load environment variables from `.env` file. See the sample env `.env-sample` file.
