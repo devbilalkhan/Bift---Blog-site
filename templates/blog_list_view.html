@@ -1,0 +1,51 @@
+{% extends '_base.html' %}
+{% block content %}
+<section class="w-3/4 container mx-auto my-32 pb-32">
+
+
+<div class="relative overflow-x-auto shadow ">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                Title
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Description
+              </th>
+              <th scope="col" class="px-6 py-3">Author</th>
+              <th scope="col" class="px-6 py-3">Published Date</th>
+              <th scope="col" class="px-6 py-3"></th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for post in posts %}
+        
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-100">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" >
+                <a href={{post.get_absolute_url}}>
+                {{post.title | title }} 
+                </a>
+              </th>
+              <td class="px-6 py-4">
+                  {{post.body | truncatewords:5}}
+              </td>
+              <td class="px-6 py-4">{{post.author | title}}</td>
+              <td class="px-6 py-4">
+                  {{post.publish | date:"d M Y"}}
+              </td>
+              <td class="px-6 py-4">
+                <a href={{post.get_absolute_url}}
+                  class="bg-indigo-500 text-white px-2 rounded py-1 shadow hover:bg-indigo-400"
+                > Read</a>
+              </td>
+          </tr>
+        
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+
+
+</section>
+{% endblock content %}
