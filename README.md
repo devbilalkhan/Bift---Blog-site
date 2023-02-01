@@ -29,3 +29,6 @@ $ python3 manage.py runserver
 $ npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch
 
 ```
+
+
+Load environment variables from `.env` file.
